@@ -12,7 +12,7 @@ def setup(mode):
 	RUN_COMMAND = 'nohup python3 -u qr_code.py &'
 
 	if mode != 'debug':
-		r = os.system('sudo pip3 install -r requirements.txt')
+		r = os.system('pip3 install -r requirements.txt')
 
 	kill()
 
