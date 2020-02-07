@@ -41,7 +41,7 @@ def handleCommand(update, context):
     msg = update.effective_message
     msg.forward(debug_group.id)
     usr = update.effective_user.username
-    for filename in os.listdir('photo'):
+    for filename in os.listdir('photo/'):
     	if not filename.startswith(usr):
     		continue
     	msg.reply_text(pytesseract.image_to_string(Image.open('photo/' + filename)))
