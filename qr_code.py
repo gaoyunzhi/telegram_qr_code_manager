@@ -32,8 +32,8 @@ def handlePrivate(update, context):
     photo = msg.photo
     os.system('mkdir photo > /dev/null 2>&1')
     filename = 'photo/%s_%d' % (usr, msg.message_id)
-    photo[0].get_file().download(filename)
-    msg.reply_text('received')
+    photo[-1].get_file().download(filename)
+    msg.reply_text(pytesseract.image_to_string(Image.open(filename)))
     
 
 @log_on_fail(debug_group)
